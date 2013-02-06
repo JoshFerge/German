@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-15 -*-
-g = True
+
 import os, sys
 class Translate:
 
@@ -18,7 +18,7 @@ class Translate:
 'the':'der die das',
 'a':'ein, eine',
 'jump':'springen',
-'wall':'der want',
+'wall':'der wand',
 'ceiling':'die decke',
 'laptop':'der laptop',
 'book':'der buch',
@@ -30,26 +30,57 @@ class Translate:
 'back':'der Rücken',
 'eye': 'das Auge',
 'face':'das Gesicht',
-'ear':'das Ohr',
-'hand':'die Hand',
-'shoulder':'die Hand'
+'foot':'der Fuß',
+'hair':'das Haar',
+'finger':'der Finger',
+'watch':'eine Armbanduhr',
+'glasses':'eine Brille'
 
 
 }
+	def Dict(self):
+		g = True
+		while g == True:
+			fruit = set(self.to) 
+			word = raw_input("what word would you like to translate?\n")
+			if word == "out":
+				print "YOLO"
+				break
+			if word not in self.to:
+				word = "nope"
+				g = False
+			
+			
+			
+			print self.to[word]
+
+	def Game(self):
+			count = 0
+			outof = 0
+			fruit = list(self.to)
+			for i in range (0 ,len(fruit)):
+				print fruit[i]
+				test = raw_input("Translate to German!\n")
+				if test != self.to[fruit[i]]:
+					print "wrong!\n"
+					print self.to[fruit[i]]
+					outof = outof+1
+
+					
+				else:
+					print "right!\n"
+					outof=outof+1
+					count=count+1
+			print count, "/", outof
 
 
 
 
-german = Translate
 
-while g == True:
-	fruit = set(german.to) 
-	word = raw_input("what word would you like to translate\n")
-	if word not in fruit:
-		word = "nope"
-		
-	
-	
-	print german.to[word]
+german = Translate()
+
+
+
+german.Game()
 
 
